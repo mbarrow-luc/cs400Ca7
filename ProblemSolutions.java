@@ -1,17 +1,15 @@
-/******************************************************************
+/* *****************************************************************
  *
- *   YOUR NAME / SECTION NUMBER
+ *   Michael Barrow / COMP 400C-001
  *
  *   This java file contains the problem solutions for the methods selectionSort,
  *   mergeSortDivisibleByKFirst, asteroidsDestroyed, and numRescueCanoes methods.
  *
  ********************************************************************/
 
-import java.util.Arrays;
-
 public class ProblemSolutions {
 
-    /**
+    /* *
      * Method SelectionSort
      *
      * This method performs a selection sort. This file will be spot checked,
@@ -38,7 +36,7 @@ public class ProblemSolutions {
 
         for (int i = 0; i < n - 1; i++) {
 
-            // YOU CODE GOES HERE -- COMPLETE THE INNER LOOP OF THIS
+            // TODO YOU CODE GOES HERE -- COMPLETE THE INNER LOOP OF THIS
             // "SELECTION SORT" ALGORITHM.
             // DO NOT FORGET TO ADD YOUR NAME / SECTION ABOVE
 
@@ -47,7 +45,7 @@ public class ProblemSolutions {
     } // End class selectionSort
 
 
-    /**
+    /* *
      *  Method mergeSortDivisibleByKFirst
      *
      *  This method will perform a merge sort algorithm. However, all numbers
@@ -83,16 +81,16 @@ public class ProblemSolutions {
         int mid = left + (right - left) / 2;
         mergeSortDivisibleByKFirst(values, k, left, mid);
         mergeSortDivisibleByKFirst(values, k, mid + 1, right);
-        mergeDivisbleByKFirst(values, k, left, mid, right);
+        mergeDivisibleByKFirst(values, k, left, mid, right);
     }
 
     /*
      * The merging portion of the merge sort, divisible by k first
      */
 
-    private void mergeDivisbleByKFirst(int arr[], int k, int left, int mid, int right)
+    private void mergeDivisibleByKFirst(int arr[], int k, int left, int mid, int right)
     {
-        // YOUR CODE GOES HERE, THIS METHOD IS NO MORE THAN THE STANDARD MERGE PORTION
+        // TODO YOUR CODE GOES HERE, THIS METHOD IS NO MORE THAN THE STANDARD MERGE PORTION
         // OF A MERGESORT, EXCEPT THE NUMBERS DIVISIBLE BY K MUST GO FIRST WITHIN THE
         // SEQUENCE PER THE DISCUSSION IN THE PROLOGUE ABOVE.
         //
@@ -107,7 +105,7 @@ public class ProblemSolutions {
     }
 
 
-    /**
+    /* *
      * Method asteroidsDestroyed
      *
      * You are given an integer 'mass', which represents the original mass of a planet.
@@ -154,14 +152,14 @@ public class ProblemSolutions {
 
     public static boolean asteroidsDestroyed(int mass, int[] asteroids) {
 
-        // YOUR CODE GOES HERE, CONSIDER USING ARRAYS.SORT()
+        // TODO YOUR CODE GOES HERE, CONSIDER USING ARRAYS.SORT()
 
         return false;
 
     }
 
 
-    /**
+    /* *
      * Method numRescueSleds
      *
      * You are given an array people where people[i] is the weight of the ith person,
@@ -192,7 +190,7 @@ public class ProblemSolutions {
 
     public static int numRescueSleds(int[] people, int limit) {
 
-        // YOUR CODE GOES HERE, CONSIDER USING ARRAYS.SORT
+        // TODO YOUR CODE GOES HERE, CONSIDER USING ARRAYS.SORT
 
         return -1;
 
