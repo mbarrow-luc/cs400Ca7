@@ -7,6 +7,8 @@
  *
  ********************************************************************/
 
+import java.util.Arrays;
+
 public class ProblemSolutions {
 
     /* *
@@ -96,20 +98,40 @@ public class ProblemSolutions {
      * The merging portion of the merge sort, divisible by k first
      */
 
-    private void mergeDivisibleByKFirst(int arr[], int k, int left, int mid, int right)
+    private void mergeDivisibleByKFirst(int[] arr, int k, int left, int mid, int right)
     {
-        // TODO YOUR CODE GOES HERE, THIS METHOD IS NO MORE THAN THE STANDARD MERGE PORTION
-        // OF A MERGESORT, EXCEPT THE NUMBERS DIVISIBLE BY K MUST GO FIRST WITHIN THE
-        // SEQUENCE PER THE DISCUSSION IN THE PROLOGUE ABOVE.
-        //
-        // NOTE: YOU CAN PROGRAM THIS WITH A SPACE COMPLEXITY OF O(1) OR O(N LOG N).
-        // AGAIN, THIS IS REFERRING TO SPACE COMPLEXITY. O(1) IS IN-PLACE, O(N LOG N)
-        // ALLOCATES AUXILIARY DATA STRUCTURES (TEMPORARY ARRAYS). IT WILL BE EASIER
-        // TO CODE WITH A SPACE COMPLEXITY OF O(N LOG N), WHICH IS FINE FOR PURPOSES
-        // OF THIS PROGRAMMING EXERCISES.
+        int[] leftArr = Arrays.copyOfRange(arr, left, mid + 1);
+        int[] rightArr = Arrays.copyOfRange(arr, mid + 1, right + 1);
 
-        return;
+        int outputIdx = left;
+        int leftIdx = 0;
+        int rightIdx = 0;
+        int leftN = mid - left + 1;
+        int rightN = right - mid;
 
+        while (leftIdx < leftN && rightIdx < rightN) {
+            if (leftArr[leftIdx] % k == 0) {
+                arr[outputIdx++] = leftArr[leftIdx++];
+            }
+            else if (rightArr[rightIdx] % k == 0) {
+                arr[outputIdx++] = rightArr[rightIdx++];
+            }
+            else {
+                if (leftArr[leftIdx] <= rightArr[rightIdx]) {
+                    arr[outputIdx++] = leftArr[leftIdx++];
+                }
+                else {
+                    arr[outputIdx++] = rightArr[rightIdx++];
+                }
+            }
+        }
+
+        while (leftIdx < leftN) {
+            arr[outputIdx++] = leftArr[leftIdx++];
+        }
+        while (rightIdx < rightN) {
+            arr[outputIdx++] = rightArr[rightIdx++];
+        }
     }
 
 
