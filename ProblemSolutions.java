@@ -36,12 +36,20 @@ public class ProblemSolutions {
 
         for (int i = 0; i < n - 1; i++) {
 
-            // TODO YOU CODE GOES HERE -- COMPLETE THE INNER LOOP OF THIS
-            // "SELECTION SORT" ALGORITHM.
-            // DO NOT FORGET TO ADD YOUR NAME / SECTION ABOVE
+            int extreme = i;
+            for (int j = i + 1; j < n; j++) {
+                if ((ascending && values[j] < values[extreme])
+                        || (!ascending && values[j] > values[extreme])) {
+                    extreme = j;
+                }
+            }
 
+            if (extreme != i) {
+                int temp = values[i];
+                values[i] = values[extreme];
+                values[extreme] = temp;
+            }
         }
-
     } // End class selectionSort
 
 
