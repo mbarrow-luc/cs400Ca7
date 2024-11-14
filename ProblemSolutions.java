@@ -228,10 +228,21 @@ public class ProblemSolutions {
 
     public static int numRescueSleds(int[] people, int limit) {
 
-        // TODO YOUR CODE GOES HERE, CONSIDER USING ARRAYS.SORT
+        Arrays.sort(people);
 
-        return -1;
+        int sleds = 0;
+        int lightest = 0;
+        int heaviest = people.length - 1;
 
+        while (lightest <= heaviest) {
+            if (people[lightest] + people[heaviest] <= limit) {
+                lightest++;
+            }
+            heaviest--;
+            sleds++;
+        }
+
+        return sleds;
     }
 
 } // End Class ProblemSolutions
